@@ -1,16 +1,32 @@
-// ApiService.js
 import axios from 'axios';
 
-const getWalkingTime = async (startBuilding, endBuilding) => {
-  // Make API request to OpenStreetMaps for walking time
-  // Example: https://your-api-endpoint/walking-time?start=Building1&end=Building2
-  const response = await axios.get(`https://your-api-endpoint/walking-time`, {
-    params: {
-      start: startBuilding,
-      end: endBuilding,
-    },
-  });
-  return response.data;
+const apiUrl = 'https://api.openrouteservice.org/v2/directions/walking';
+
+const apiKey = 'YOUR_OPENROUTESERVICE_API_KEY'; // Replace with your API key
+
+const getWalkingTime = async (startAddress, endAddress) => {
+  try {
+    const response = await axios.post(apiUrl, {
+      coordinates: [
+        [startAddress.longitude, startAddress.latitude],
+        [endAddress.longitude, endAddress.latitude],
+      ],
+      profile: 'foot-walking',
+    }, {
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
+    });
+
+    // Extract walking distance from the response
+    const walkingDistance = response.data.features[0].properties.segments[0].distance;
+
+    return walkingDistance;
+  } catch (error) {
+    console.error('Error calculating walking distance:', error);
+    throw error;
+  }
 };
 
-export default { getWalkingTime };
+export default getWalkingTime;

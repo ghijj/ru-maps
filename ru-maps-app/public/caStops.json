@@ -1,16 +1,16 @@
 [
     {
-        "building": "hi",
+        "building": "College Ave Student Center",
         "longitude": "hello 1",
         "latitude": "hello 1"
     },
     {
-        "building": "hi2",
+        "value": "The Yard",
         "longitude": "hello 2",
         "latitude": "hello 2"
     },
     {
-        "building": "hi3",
+        "value": "Student Activity Center",
         "longitude": "hello 3",
         "latitude": "hello 3"
     }
