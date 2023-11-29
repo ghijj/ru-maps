@@ -20,11 +20,11 @@ const App = () => {
   
       const { value, longitude, latitude } = selectedBuildingData;
   
-      // Get the coordinates of the three other buildings from caStops.json
+      // Get the coordinates of the other stops from caStops.json
       const caStopsResponse = await fetch(process.env.PUBLIC_URL + '/caStops.json');
       const caStopsData = await caStopsResponse.json();
-  
-      const buildingsToCheck = ['Building2', 'Building3', 'Building4'];
+      console.log(caStopsData);
+      const buildingsToCheck = ['College Ave Student Center', 'Student Activity Center', 'The Yard'];
   
       const times = await Promise.all(
         buildingsToCheck.map(async (targetBuilding) => {
@@ -34,7 +34,7 @@ const App = () => {
             console.error(`Data for ${targetBuilding} not found.`);
             return { targetBuilding, walkingTime: null };
           }
-  
+          return { targetBuilding, walkingTime: 1 }; //this is just here for testing because otherwise it will runtime error cuz ApiService is not implemented yet. 
           const { longitude: targetLongitude, latitude: targetLatitude } = targetBuildingData;
   
           // Call ApiService.getWalkingTime
@@ -60,7 +60,7 @@ const App = () => {
       <BuildingInput onSearch={handleSearch} />
       {walkingTimes.map((item, index) => (
         <div key={index}>
-          Walking time to {item.targetBuilding}: {item.walkingTime} seconds
+          Walking time from {item.targetBuilding}: {item.walkingTime} minutes
         </div>
       ))}
     </div>

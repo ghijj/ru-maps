@@ -1,16 +1,16 @@
 [
     {
-        "building": "hi",
+        "building": "Murray Hall",
         "longitude": "hello 1",
         "latitude": "hello 1"
     },
     {
-        "building": "hi2",
+        "building": "Van Dyck Hall",
         "longitude": "hello 2",
         "latitude": "hello 2"
     },
     {
-        "building": "hi3",
+        "building": "Scott Hall",
         "longitude": "hello 3",
         "latitude": "hello 3"
     }
