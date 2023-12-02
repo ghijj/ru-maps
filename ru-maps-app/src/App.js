@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import BuildingInput from './components/BuildingInputs';
-import ApiService from './services/ApiService';
 import BuildingOptionsService from './services/BuildingOptionsService';
+import { getWalkingTime1 } from './services/ApiService'; 
 
 const App = () => {
   const [walkingTimes, setWalkingTimes] = useState([]);
@@ -34,14 +34,28 @@ const App = () => {
             console.error(`Data for ${targetBuilding} not found.`);
             return { targetBuilding, walkingTime: null };
           }
-          return { targetBuilding, walkingTime: 1 }; //this is just here for testing because otherwise it will runtime error cuz ApiService is not implemented yet. 
+          //return { targetBuilding, walkingTime: 1 }; //this is just here for testing because otherwise it will runtime error cuz ApiService is not implemented yet. 
           const { longitude: targetLongitude, latitude: targetLatitude } = targetBuildingData;
   
           // Call ApiService.getWalkingTime
-          const walkingTime = await ApiService.getWalkingTime(
-            { longitude, latitude },
-            { longitude: targetLongitude, latitude: targetLatitude }
-          );
+          const [walkingTime, setWalkingTime] = useState(null);
+          const startLocation = {
+            longitude: 10.12345,
+            latitude: 20.67890
+          };
+          const endLocation = {
+            longitude: 20.12345,
+            latitude: 10.67890
+          };
+          useEffect(() => {
+            getWalkingTime1(startLocation, endLocation)
+              .then(walkingTime => {
+                setWalkingTime(walkingTime); // Save walking time to the state variable
+              })
+              .catch(error => {
+                console.error(error);
+              });
+          }, []);
   
           return { targetBuilding, walkingTime };
         })
