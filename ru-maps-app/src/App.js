@@ -34,8 +34,8 @@ const App = () => {
             console.error(`Data for ${targetBuilding} not found.`);
             return { targetBuilding, walkingTime: null };
           }
-          //return { targetBuilding, walkingTime: 1 }; //this is just here for testing because otherwise it will runtime error cuz ApiService is not implemented yet. 
-          const { longitude: targetLongitude, latitude: targetLatitude } = targetBuildingData;
+          return { targetBuilding, walkingTime: 1 }; //this is just here for testing because otherwise it will runtime error cuz ApiService is not implemented yet. 
+          /*const { longitude: targetLongitude, latitude: targetLatitude } = targetBuildingData;
   
           // Call ApiService.getWalkingTime
           const [walkingTime, setWalkingTime] = useState(null);
@@ -57,7 +57,7 @@ const App = () => {
               });
           }, []);
   
-          return { targetBuilding, walkingTime };
+          return { targetBuilding, walkingTime }; */
         })
       );
   
