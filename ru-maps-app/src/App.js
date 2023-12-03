@@ -29,38 +29,24 @@ const App = () => {
       const times = await Promise.all(
         buildingsToCheck.map(async (targetBuilding) => {
           const targetBuildingData = caStopsData.find(stop => stop.value === targetBuilding);
-  
+
           if (!targetBuildingData) {
             console.error(`Data for ${targetBuilding} not found.`);
             return { targetBuilding, walkingTime: null };
           }
-          return { targetBuilding, walkingTime: 1 }; //this is just here for testing because otherwise it will runtime error cuz ApiService is not implemented yet. 
-          /*const { longitude: targetLongitude, latitude: targetLatitude } = targetBuildingData;
-  
-          // Call ApiService.getWalkingTime
-          const [walkingTime, setWalkingTime] = useState(null);
-          const startLocation = {
-            longitude: 10.12345,
-            latitude: 20.67890
-          };
-          const endLocation = {
-            longitude: 20.12345,
-            latitude: 10.67890
-          };
-          useEffect(() => {
-            getWalkingTime1(startLocation, endLocation)
-              .then(walkingTime => {
-                setWalkingTime(walkingTime); // Save walking time to the state variable
-              })
-              .catch(error => {
-                console.error(error);
-              });
-          }, []);
-  
-          return { targetBuilding, walkingTime }; */
+
+          const { longitude: targetLongitude, latitude: targetLatitude } = targetBuildingData;
+
+          // Call getWalkingTime1 asynchronously
+          const walkingTime = await getWalkingTime1(
+            { longitude: 10.12345, latitude: 20.67890 },
+            { longitude: 20.12345, latitude: 10.67890 }
+          );
+
+          return { targetBuilding, walkingTime };
         })
       );
-  
+
       // Update state with walking times
       setWalkingTimes(times);
     } catch (error) {

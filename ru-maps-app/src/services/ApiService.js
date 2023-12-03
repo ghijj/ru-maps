@@ -13,7 +13,7 @@ export const getWalkingTime1 = async (startLocation, endLocation) => {
     api_key: apiKey,
     coordinates: [startLocation, endLocation],
   };
-
+  return 2;
   return axios.post(baseUrl, params)
     .then(response => {
       const duration = response.data.features[0].properties.segments[0].duration;
