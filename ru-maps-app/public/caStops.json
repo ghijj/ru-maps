@@ -1,17 +1,14 @@
 [
     {
         "value": "College Ave Student Center",
-        "longitude": "10",
-        "latitude": "10"
+        "coordinates": "-74.452103, 40.503268"
     },
     {
         "value": "The Yard",
-        "longitude": "10",
-        "latitude": "10"
+        "coordinates": "-74.448330, 40.499536"
     },
     {
         "value": "Student Activity Center",
-        "longitude": "10",
-        "latitude": "10"
+        "coordinates": "-74.449046, 40.504059"
     }
 ]

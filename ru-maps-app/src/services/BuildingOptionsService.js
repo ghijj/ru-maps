@@ -3,12 +3,11 @@ const fetchBuildingOptions = async () => {
     const response = await fetch(process.env.PUBLIC_URL + '/buildingOptions.json');
     const data = await response.json();
 
-    // Assuming your JSON structure is an array of objects with "building," "longitude," and "latitude" properties
     const options = data.map(item => ({
       label: item.building, // Use "label" for the display value in React Select
       value: item.building, // Use "value" for the actual value in React Select
-      longitude: item.longitude,
-      latitude: item.latitude
+      coordinates: item.coordinates,
+      campus: item.campus
     }));
 
     return options;

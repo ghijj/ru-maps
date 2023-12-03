@@ -1,17 +1,17 @@
 [
     {
         "building": "Murray Hall",
-        "longitude": "hello 1",
-        "latitude": "hello 1"
+        "coordinates": "-74.448343,40.499542",
+        "campus": "CA"
     },
     {
         "building": "Van Dyck Hall",
-        "longitude": "hello 2",
-        "latitude": "hello 2"
+        "coordinates":"-74.448343,40.499542",
+        "campus": "CA"
     },
     {
-        "building": "Scott Hall",
-        "longitude": "hello 3",
-        "latitude": "hello 3"
+        "building": "Scott Hall (SCO)",
+        "coordinates": "-74.448343,40.499542",
+        "campus": "CA"
     }
 ]

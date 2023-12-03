@@ -23,15 +23,44 @@ const App = () => {
         console.error('Selected building data not found.');
         return;
       }
-  
-      const { value, longitude, latitude } = selectedBuildingData;
+      console.log(selectedBuildingData);
+      
+      let stopData;
+      switch (selectedBuildingData.campus) {
+        case "CA":
+          stopData = await fetch(process.env.PUBLIC_URL + '/caStops.json').then(response => response.json());
+          console.log("is CA");
+          break;
+      
+        case "Busch":
+          stopData = await fetch(process.env.PUBLIC_URL + '/buschStops.json').then(response => response.json());
+          console.log("is Busch");
+          break;
+      
+        case "Livingston":
+          stopData = await fetch(process.env.PUBLIC_URL + '/livingstonStops.json').then(response => response.json());
+          console.log("is Livingston");
+          break;
+      
+        case "C/D":
+          stopData = await fetch(process.env.PUBLIC_URL + '/cdStops.json').then(response => response.json());
+          console.log("is C/D");
+          break;
+      
+        default:
+          console.log("Unknown campus");
+          break;
+      }
+      
   
       // Get the coordinates of the other stops from caStops.json
       const caStopsResponse = await fetch(process.env.PUBLIC_URL + '/caStops.json');
       const caStopsData = await caStopsResponse.json();
       console.log(caStopsData);
-      const buildingsToCheck = ['College Ave Student Center', 'Student Activity Center', 'The Yard'];
-  
+      //const buildingsToCheck = ['College Ave Student Center', 'Student Activity Center', 'The Yard'];
+
+      const buildingsToCheck = caStopsData.map(item => item.value)
+
       const times = await Promise.all(
         buildingsToCheck.map(async (targetBuilding) => {
           const targetBuildingData = caStopsData.find(stop => stop.value === targetBuilding);
