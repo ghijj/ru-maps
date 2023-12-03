@@ -52,18 +52,12 @@ const App = () => {
           break;
       }
       
-  
-      // Get the coordinates of the other stops from caStops.json
-      const caStopsResponse = await fetch(process.env.PUBLIC_URL + '/caStops.json');
-      const caStopsData = await caStopsResponse.json();
-      console.log(caStopsData);
-      //const buildingsToCheck = ['College Ave Student Center', 'Student Activity Center', 'The Yard'];
-
-      const buildingsToCheck = caStopsData.map(item => item.value)
+      console.log(stopData);
+      const buildingsToCheck = stopData.map(item => item.value) // get the buildings we want to check for the campus we are looking at
 
       const times = await Promise.all(
         buildingsToCheck.map(async (targetBuilding) => {
-          const targetBuildingData = caStopsData.find(stop => stop.value === targetBuilding);
+          const targetBuildingData = stopData.find(stop => stop.value === targetBuilding);
 
           if (!targetBuildingData) {
             console.error(`Data for ${targetBuilding} not found.`);

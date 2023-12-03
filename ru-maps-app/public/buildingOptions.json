@@ -13,5 +13,20 @@
         "building": "Scott Hall (SCO)",
         "coordinates": "-74.448343,40.499542",
         "campus": "CA"
+    },
+    {
+        "building": "Tillet Hall (TIL)",
+        "coordinates": "-74.448343,40.499542",
+        "campus": "Livingston"
+    },
+    {
+        "building": "Hill Center (HLL)",
+        "coordinates": "-74.448343,40.499542",
+        "campus": "Busch"
+    },
+    {
+        "building": "Bartlett Hall (BAR)",
+        "coordinates": "-74.448343,40.499542",
+        "campus": "C/D"
     }
 ]
