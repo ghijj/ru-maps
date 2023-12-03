@@ -7,6 +7,12 @@ import { getWalkingTime1 } from './services/ApiService';
 const App = () => {
   const [walkingTimes, setWalkingTimes] = useState([]);
   
+  const formatWalkingTime = (walkingTime) => {
+    const minutes = Math.floor(walkingTime / 60);
+    const seconds = Math.round(walkingTime % 60); // Round seconds to the nearest whole number
+    return `${minutes} minutes, ${seconds} seconds`;
+  };
+
   const handleSearch = async (selectedBuilding) => {
     try {
       // Get the coordinates of the selected building from buildingOptions.json
@@ -36,8 +42,8 @@ const App = () => {
           }
 
           const { longitude: targetLongitude, latitude: targetLatitude } = targetBuildingData;
-          const startLocation = '-74.447243,40.486396';
-          const endLocation =  '-74.473014,40.505544';
+          const startLocation = '-74.448343,40.499542'; //scott hall
+          const endLocation =  '-74.447069,40.501486'; //graduate school of education building
           // Call getWalkingTime1 asynchronously
           const walkingTime = await getWalkingTime1(startLocation, endLocation);
 
@@ -58,7 +64,7 @@ const App = () => {
       <BuildingInput onSearch={handleSearch} />
       {walkingTimes.map((item, index) => (
         <div key={index}>
-          Walking time from {item.targetBuilding}: {item.walkingTime} minutes
+          Walking time from {item.targetBuilding}: {formatWalkingTime(item.walkingTime)}
         </div>
       ))}
     </div>

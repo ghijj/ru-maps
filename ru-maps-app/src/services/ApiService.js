@@ -9,7 +9,7 @@ import axios from 'axios';
 export async function getWalkingTime1(startCoordinates, endCoordinates) {
   const apiKey = '5b3ce3597851110001cf6248b6f844c6bf6d4060b09c6632e88b387a';
 
-  const apiUrl = `https://api.openrouteservice.org/v2/directions/driving-car?api_key=${apiKey}&start=${startCoordinates}&end=${endCoordinates}`;
+  const apiUrl = `https://api.openrouteservice.org/v2/directions/foot-walking?api_key=${apiKey}&start=${startCoordinates}&end=${endCoordinates}`;
 
   try {
     const response = await fetch(apiUrl, {
@@ -25,6 +25,7 @@ export async function getWalkingTime1(startCoordinates, endCoordinates) {
 
     const data = await response.json();
     // Extract walking time from the response
+    console.log(data);
     const walkingTime = data.features[0].properties.segments[0].duration;
 
     return walkingTime;
@@ -33,6 +34,7 @@ export async function getWalkingTime1(startCoordinates, endCoordinates) {
     throw error;
   }
 }
+
 // module.exports = {
 //   getWalkingTime1,
 // };
