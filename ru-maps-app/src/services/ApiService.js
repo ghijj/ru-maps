@@ -1,29 +1,38 @@
 import axios from 'axios';
 
-const apiUrl = 'https://api.openrouteservice.org/v2/directions/walking';
+// const apiUrl = 'https://api.openrouteservice.org/v2/directions/driving-car?api_key=5b3ce3597851110001cf6248b6f844c6bf6d4060b09c6632e88b387a&start=8.681495,49.41461&end=8.687872,49.420318';
 
-const apiKey = '5b3ce3597851110001cf6248b6f844c6bf6d4060b09c6632e88b387a'; // Replace with API key
+// const apiKey = '5b3ce3597851110001cf6248b6f844c6bf6d4060b09c6632e88b387a'; // Replace with API key
 
 
 
-export const getWalkingTime1 = async (startLocation, endLocation) => {
-  const baseUrl = 'https://api.openrouteservice.org/v2/directions/walking';
+export async function getWalkingTime1(startCoordinates, endCoordinates) {
+  const apiKey = '5b3ce3597851110001cf6248b6f844c6bf6d4060b09c6632e88b387a';
 
-  const params = {
-    api_key: apiKey,
-    coordinates: [startLocation, endLocation],
-  };
-  return 2;
-  return axios.post(baseUrl, params)
-    .then(response => {
-      const duration = response.data.features[0].properties.segments[0].duration;
-      return duration; // Returning the walking time in seconds
-    })
-    .catch(error => {
-      throw error;
+  const apiUrl = `https://api.openrouteservice.org/v2/directions/driving-car?api_key=${apiKey}&start=${startCoordinates}&end=${endCoordinates}`;
+
+  try {
+    const response = await fetch(apiUrl, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json, application/geo+json, application/gpx+xml, img/png; charset=utf-8',
+      },
     });
-}
 
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    // Extract walking time from the response
+    const walkingTime = data.features[0].properties.segments[0].duration;
+
+    return walkingTime;
+  } catch (error) {
+    console.error('Error fetching walking directions:', error);
+    throw error;
+  }
+}
 // module.exports = {
 //   getWalkingTime1,
 // };

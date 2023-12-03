@@ -36,12 +36,10 @@ const App = () => {
           }
 
           const { longitude: targetLongitude, latitude: targetLatitude } = targetBuildingData;
-
+          const startLocation = '-74.447243,40.486396';
+          const endLocation =  '-74.473014,40.505544';
           // Call getWalkingTime1 asynchronously
-          const walkingTime = await getWalkingTime1(
-            { longitude: 10.12345, latitude: 20.67890 },
-            { longitude: 20.12345, latitude: 10.67890 }
-          );
+          const walkingTime = await getWalkingTime1(startLocation, endLocation);
 
           return { targetBuilding, walkingTime };
         })
