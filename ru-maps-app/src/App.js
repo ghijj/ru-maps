@@ -84,13 +84,44 @@ const App = () => {
     <div className="App">
       <Header title="RU MAPS" />
       <BuildingInput onSearch={handleSearch} />
-      <div className="walking-times">
-        {walkingTimes.map((item, index) => (
-          <div key={index} className="walking-time">
-            Walking time from {item.targetBuilding}: {formatWalkingTime(item.walkingTime)}
-          </div>
-        ))}
-      </div>
+      {walkingTimes.map((item, index) => (
+        <div
+          key={index}
+          className="BuildingOutput"
+          style={{
+            border: '4px solid #007bff',
+            marginBottom: '8px',
+            padding: '8px',
+            fontSize: '20px',
+            backgroundColor: '#f8f8f8', // Background color
+            color: '#333', // Text color
+            borderRadius: '8px',
+            boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)',
+          }}
+        >
+          <span
+            className="building-name"
+            style={{
+              color: '#4CAF50', // Green color for building names
+              fontWeight: 'bold',
+            }}
+          >
+            {item.targetBuilding}
+          </span>
+          :{' '}
+          <span
+            className="walking-time"
+            style={{
+              color: '#FF5722', // Orange color for walking times
+              fontSize: '40px',
+              fontWeight: 'bold',
+            }}
+          >
+            {formatWalkingTime(item.walkingTime)}
+          </span>{' '}
+          minutes
+        </div>
+      ))}
     </div>
   );
 };
