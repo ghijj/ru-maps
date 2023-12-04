@@ -52,7 +52,6 @@ const App = () => {
           break;
       }
       
-      console.log(stopData);
       const buildingsToCheck = stopData.map(item => item.value) // get the buildings we want to check for the campus we are looking at
 
       const times = await Promise.all(
@@ -64,9 +63,9 @@ const App = () => {
             return { targetBuilding, walkingTime: null };
           }
 
-          const { longitude: targetLongitude, latitude: targetLatitude } = targetBuildingData;
-          const startLocation = '-74.448343,40.499542'; //scott hall
-          const endLocation =  '-74.447069,40.501486'; //graduate school of education building
+          const { latitude: targetLatitude, longitude: targetLongitude } = targetBuildingData;
+          const startLocation = targetBuildingData.coordinates; //
+          const endLocation =  selectedBuildingData.coordinates; //graduate school of education building
           // Call getWalkingTime1 asynchronously
           const walkingTime = await getWalkingTime1(startLocation, endLocation);
 
@@ -82,14 +81,16 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className="App">
       <Header title="RU MAPS" />
       <BuildingInput onSearch={handleSearch} />
-      {walkingTimes.map((item, index) => (
-        <div key={index}>
-          Walking time from {item.targetBuilding}: {formatWalkingTime(item.walkingTime)}
-        </div>
-      ))}
+      <div className="walking-times">
+        {walkingTimes.map((item, index) => (
+          <div key={index} className="walking-time">
+            Walking time from {item.targetBuilding}: {formatWalkingTime(item.walkingTime)}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
