@@ -82,46 +82,45 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header title="RU MAPS" />
+      <Header title="Hello" />
       <BuildingInput onSearch={handleSearch} />
       {walkingTimes.map((item, index) => (
-        <div
-          key={index}
-          className="BuildingOutput"
-          style={{
-            border: '4px solid #007bff',
-            marginBottom: '8px',
-            padding: '8px',
-            fontSize: '20px',
-            backgroundColor: '#f8f8f8', // Background color
-            color: '#333', // Text color
-            borderRadius: '8px',
-            boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)',
-          }}
-        >
-          <span
-            className="building-name"
-            style={{
-              color: '#4CAF50', // Green color for building names
-              fontWeight: 'bold',
-            }}
-          >
-            {item.targetBuilding}
-          </span>
-          :{' '}
-          <span
-            className="walking-time"
-            style={{
-              color: '#FF5722', // Orange color for walking times
-              fontSize: '40px',
-              fontWeight: 'bold',
-            }}
-          >
-            {formatWalkingTime(item.walkingTime)}
-          </span>{' '}
-          minutes
-        </div>
-      ))}
+  <div
+    key={index}
+    className="BuildingOutput"
+    style={{
+      margin: '20px',
+      padding: '15px',
+      border: '1px solid #adadf7',
+      borderRadius: '10px',
+      backgroundColor: '#f8f8f8',
+      color: '#adadf7',
+      boxShadow: '2px 4px 20px rgba(0, 0, 0, 0.4)',
+      textAlign: 'center',
+    }}
+  >
+    <span
+      className="building-name"
+      style={{
+        color: '#6d05ff',
+        fontWeight: 'bold',
+      }}
+    >
+      {item.targetBuilding}
+    </span>
+    :{' '}
+    <span
+      className="walking-time"
+      style={{
+        color: '#ff00a8',
+        fontSize: '35px',
+        fontWeight: 'bold',
+      }}
+    >
+      {formatWalkingTime(item.walkingTime)}
+      </span>{' '}
+    </div>
+))}
     </div>
   );
 };

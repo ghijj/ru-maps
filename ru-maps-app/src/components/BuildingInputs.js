@@ -26,15 +26,45 @@ const BuildingInput = ({ onSearch }) => {
   };
 
   return (
-    <div>
+    <div style={{ textAlign: 'left', margin: '20px' }}>
       <Select
         options={buildingOptions}
         value={buildingOptions.find((opt) => opt.value === inputValue)}
         onChange={(selectedOption) => setInputValue(selectedOption.value)}
+        styles={{
+          control: (provided, state) => ({
+            ...provided,
+            fontFamily: "Verdana , serif",
+            color: '#fff',
+            border: state.isFocused ? '2px solid #61dafb' : '1px solid #ccc',
+            boxShadow: state.isFocused ? '0 0 5px rgba(97, 218, 251, 0.7)' : 'none',
+            borderRadius: '8px',
+          }),
+          option: (provided, state) => ({
+            ...provided,
+            backgroundColor: state.isSelected ? '#61dafb' : 'white',
+            color: state.isSelected ? 'white' : 'black',
+          }),
+        }}
       />
-      <button onClick={handleSearch}>Search</button>
+      <button
+        onClick={handleSearch}
+        style={{
+          marginTop:'10px',
+          backgroundColor: '#5a5a5a',
+          color: 'white',
+          padding: '10px 20px',
+          border: 'none',
+          borderRadius: '5px',
+          fontFamily: "Verdana , serif",
+          fontWeight: 'bold',
+          cursor: 'pointer',
+        }}
+      >
+        Search
+      </button>
     </div>
   );
-};
+  };  
 
 export default BuildingInput;
