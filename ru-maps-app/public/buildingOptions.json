@@ -1,7 +1,7 @@
 [
     {
         "building": "Murray Hall",
-        "coordinates": "-74.448343,40.499542",
+        "coordinates": "-74.446814,40.500564",
         "campus": "CA"
     },
     {
@@ -11,22 +11,22 @@
     },
     {
         "building": "Scott Hall (SC)",
-        "coordinates": "-74.448343,40.499542",
+        "coordinates": "-74.448343,40.499542", 
         "campus": "CA"
     },
     {
         "building": "Tillet Hall (TIL)",
-        "coordinates": "-74.448343,40.499542",
+        "coordinates": "-74.435694,40.52187", 
         "campus": "Livingston"
     },
     {
         "building": "Hill Center (HLL)",
-        "coordinates": "-74.448343,40.499542",
+        "coordinates": "-74.462816,40.521866", 
         "campus": "Busch"
     },
     {
         "building": "Bartlett Hall (BAR)",
-        "coordinates": "-74.448343,40.499542",
+        "coordinates": "-74.437872,40.480149", 
         "campus": "C/D"
     },
     {
