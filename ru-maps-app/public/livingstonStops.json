@@ -1,6 +1,14 @@
 [
     {
         "value": "Livingston Student Center",
-        "coordinates": "-74.452103, 40.503268"
+        "coordinates": "-74.436589,40.523949"
+    },
+    {
+        "value": "Livingston Plaza",
+        "coordinates": "-74.438553,40.524981"
+    },
+    {
+        "value": "Quads",
+        "coordinates": "-74.433542,40.519843"
     }
 ]

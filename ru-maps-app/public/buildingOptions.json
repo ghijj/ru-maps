@@ -6,7 +6,7 @@
     },
     {
         "building": "Van Dyck Hall",
-        "coordinates":"-74.448663, 40.500503",
+        "coordinates":"-74.448663,40.500503",
         "campus": "CA"
     },
     {
@@ -28,5 +28,175 @@
         "building": "Bartlett Hall (BAR)",
         "coordinates": "-74.448343,40.499542",
         "campus": "C/D"
+    },
+    {
+        "building": "Winants Hall",
+        "coordinates": "-74.446921,40.498177",
+        "campus": "CA"
+    },
+    {
+        "building": "Van Nest Hall",
+        "coordinates": "-74.44705,40.498573",
+        "campus": "CA"
+    },
+    {
+        "building": "New Jersey Hall (NJ)",
+        "coordinates": "-74.446868,40.499413",
+        "campus": "CA"
+    },
+    {
+        "building": "Voorhees Hall (VH)",
+        "coordinates": "-74.446363,40.499797",
+        "campus": "CA"
+    },
+    {
+        "building": "Ford Hall",
+        "coordinates": "-74.448547,40.500523",
+        "campus": "CA"
+    },
+    {
+        "building": "Milledoler Hall (MI)",
+        "coordinates": "-74.447066,40.500984",
+        "campus": "CA"
+    },
+    {
+        "building": "Tinsley Hall",
+        "coordinates": "-74.449899,40.502432",
+        "campus": "CA"
+    },
+    {
+        "building": "Frelinghuysen Hall (FH)",
+        "coordinates": "-74.448466,40.503868",
+        "campus": "CA"
+    },
+    {
+        "building": "Campbell Hall (CA)",
+        "coordinates": "-74.451165,40.505401",
+        "campus": "CA"
+    },
+    {
+        "building": "Hardenbergh Hall (HH)",
+        "coordinates": "-74.449915,40.504651",
+        "campus": "CA"
+    },
+    {
+        "building": "Campbell Hall (CH)",
+        "coordinates": "-74.451165,40.505401",
+        "campus": "CA"
+    },
+    {
+        "building": "Alexander Library (ALX)",
+        "coordinates": "-74.452683,40.504928",
+        "campus": "CA"
+    },
+    {
+        "building": "College Hall (CH)",
+        "coordinates": "-74.43718,40.486628",
+        "campus": "C/D"
+    },
+    {
+        "building": "Biological Sciences Building (BIO)",
+        "coordinates": "-74.437475,40.487734",
+        "campus": "C/D"
+    },
+    {
+        "building": "Regina B. Heldrich Science Building (HSB)",
+        "coordinates": "-74.43829,40.486742",
+        "campus": "C/D"
+    },
+    {
+        "building": "Douglass Modular Prefab Chemistry Addition (CHX)",
+        "coordinates": "-74.438413,40.486477",
+        "campus": "C/D"
+    },
+    {
+        "building": "Carpender Hall (CPH)",
+        "coordinates": "-74.4363,40.48551",
+        "campus": "C/D"
+    },
+    {
+        "building": "Hickman Hall (HCK)",
+        "coordinates": "-74.43409,40.484674",
+        "campus": "C/D"
+    },
+    {
+        "building": "Mabel Smith Douglass Libary (DL)",
+        "coordinates": "-74.435377,40.485547",
+        "campus": "C/D"
+    },
+    {
+        "building": "Davison Hall (DAV)",
+        "coordinates": "-74.437335,40.484131",
+        "campus": "C/D"
+    },
+    {
+        "building": "CBIM Modular Building (BMD)",
+        "coordinates": "-74.45839,40.521833",
+        "campus": "Busch"
+    },
+    {
+        "building": "Biomedical Engineering Building (BME)",
+        "coordinates": "-74.460488,40.524361",
+        "campus": "Busch"
+    },
+    {
+        "building": "School of Engineering Building (EN)",
+        "coordinates": "-74.460434,40.522901",
+        "campus": "Busch"
+    },
+    {
+        "building": "T. Alexander Pond SERC Science & Engineering Resource Center (SEC)",
+        "coordinates": "-74.46272,40.522861",
+        "campus": "Busch"
+    },
+    {
+        "building": "Nanophysics Laboratory (NPL)",
+        "coordinates": "-74.464007,40.523382",
+        "campus": "Busch"
+    },
+    {
+        "building": "Allison Road Classroom Building (ARC)",
+        "coordinates": "40.523701, -74.46508",
+        "campus": "Busch"
+    },
+    {
+        "building": "Chemistry & Chemical Biology",
+        "coordinates": "-74.462087,40.524373",
+        "campus": "Busch"
+    },
+    {
+        "building": "Richard Weeks Hall of Engineering (RWH)",
+        "coordinates": "-74.459571,40.524508",
+        "campus": "Busch"
+    },
+    {
+        "building": "Janice H. Levin Building (JLB)",
+        "coordinates": "-74.439341,40.523562",
+        "campus": "Livingston"
+    },
+    {
+        "building": "Lucy Stone Hall (LSH)",
+        "coordinates": "-74.435146,40.522171",
+        "campus": "Livingston"
+    },
+    {
+        "building": "Beck Hall (BE)",
+        "coordinates": "-74.439384,40.522861",
+        "campus": "Livingston"
+    },
+    {
+        "building": "Rutgers Businesss School (BRR)",
+        "coordinates": "-74.4405,40.523309",
+        "campus": "Livingston"
+    },
+    {
+        "building": "James Dickinson Carr Library",
+        "coordinates": "-74.43718,40.522359",
+        "campus": "Livingston"
+    },
+    {
+        "building": "Livingston Recreation Center (LVG)",
+        "coordinates": "-74.431268,40.521282",
+        "campus": "Livingston"
     }
 ]

@@ -1,6 +1,26 @@
 [
     {
-        "value": "Douglass Student Center",
-        "coordinates": "-74.452103, 40.503268"
+        "value": "Gibbons",
+        "coordinates": "-74.429712,40.485808"
+    },
+    {
+        "value": "College Hall",
+        "coordinates": "-74.437491,40.485571"
+    },
+    {
+        "value": "Lipman Hall",
+        "coordinates": "-74.436396,40.481075"
+    },
+    {
+        "value": "Red Oak Lane",
+        "coordinates": "-74.43763,40.482764"
+    },
+    {
+        "value": "Henderson",
+        "coordinates": "-74.428816,40.481104"
+    },
+    {
+        "value": "Biel Road",
+        "coordinates": "-74.432496,40.479916"
     }
 ]

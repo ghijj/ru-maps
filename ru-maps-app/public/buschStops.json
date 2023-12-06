@@ -1,6 +1,26 @@
 [
     {
         "value": "Busch Student Center",
-        "coordinates": "-74.452103, 40.503268"
+        "coordinates": "-74.458004,40.523529"
+    },
+    {
+        "value": "Science Building",
+        "coordinates": "-74.464206,40.523872"
+    },
+    {
+        "value": "Allison Road Classrooms",
+        "coordinates": "-74.465053,40.523635"
+    },
+    {
+        "value": "Hill Center",
+        "coordinates": "-74.463277,40.521976"
+    },
+    {
+        "value": "Stadium",
+        "coordinates": "-74.465761,40.514631"
+    },
+    {
+        "value": "Werblin Recreation Center",
+        "coordinates": "-74.460075,40.518705"
     }
 ]
