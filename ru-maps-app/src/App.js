@@ -82,7 +82,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header title="Hello" />
+      <Header title="Walk Duration Finder" />
       <BuildingInput onSearch={handleSearch} />
       {walkingTimes.map((item, index) => (
   <div
