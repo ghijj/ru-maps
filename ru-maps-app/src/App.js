@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
+import Subheader from './components/Subheader';
 import BuildingInput from './components/BuildingInputs';
 import BuildingOptionsService from './services/BuildingOptionsService';
 import { getWalkingTime1 } from './services/ApiService'; 
@@ -80,9 +81,36 @@ const App = () => {
     }
   };
 
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    // Your scroll animation logic here
+    // For example, change the background color on scroll
+    const scrollY = window.scrollY;
+    if (scrollY > 100) {
+  
+    } else {
+      document.body.style.backgroundColor = '#FFFFFF';
+    }
+  };
+
+
   return (
-    <div className="App">
-      <Header title="Walk Duration Finder" />
+    <div className="App"
+      style={{
+      margin: '20px',
+      padding: '15px',
+      //textAlign: 'center',
+      borderBottom: '1px',
+    }}>
+   
+      <Header title="Rutgers Walk Times" />
+
       <BuildingInput onSearch={handleSearch} />
       {walkingTimes.map((item, index) => (
   <div
@@ -91,18 +119,19 @@ const App = () => {
     style={{
       margin: '20px',
       padding: '15px',
-      border: '1px solid #adadf7',
+      border: '2px solid #E4E4E4',
       borderRadius: '10px',
+      fontSize: '25px',
       backgroundColor: '#f8f8f8',
       color: '#adadf7',
-      boxShadow: '2px 4px 20px rgba(0, 0, 0, 0.4)',
+      boxShadow: '2px 4px 20px rgba(0, 0, 0, 0.05)',
       textAlign: 'center',
     }}
   >
     <span
       className="building-name"
       style={{
-        color: '#6d05ff',
+        color: '#34495E',
         fontWeight: 'bold',
       }}
     >
@@ -112,8 +141,8 @@ const App = () => {
     <span
       className="walking-time"
       style={{
-        color: '#ff00a8',
-        fontSize: '35px',
+        color: '#5D6D7E',
+        fontSize: '25px',
         fontWeight: 'bold',
       }}
     >

@@ -28,7 +28,7 @@ const BuildingInput = ({ onSearch }) => {
   return (
     <div style={{ textAlign: 'left', margin: '20px' }}>
       <Select
-        options={buildingOptions}
+        options={buildingOptions} 
         value={buildingOptions.find((opt) => opt.value === inputValue)}
         onChange={(selectedOption) => setInputValue(selectedOption.value)}
         styles={{

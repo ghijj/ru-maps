@@ -15,6 +15,24 @@
   color: white;
 }
 
+.App-subheader {
+  background-color: #707072;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(5px + 2vmin);
+  color: white;
+  margin-top: 5px;
+  
+}
+h2.subheading {
+  color: #757575; /* Subheading color */
+  font-size: 1.0em; /* Adjust the font size as needed */
+  margin-top: 5px; /* Add some space between main heading and subheading */
+}
+
 /* Styling for hyperlinks in the app */
 .App-link {
   color: #61dafb;
